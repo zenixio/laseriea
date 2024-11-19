@@ -27,11 +27,9 @@ class StorageService {
         );
       }
 
-      LoggerService.log(
-          tag: 'StorageService', message: 'data saved $base64String');
+      LoggerService.log(tag: 'StorageService', message: 'data saved $base64String');
     } catch (e) {
-      LoggerService.log(
-          tag: 'StorageService', message: 'Error while saving data $e');
+      LoggerService.log(tag: 'StorageService', message: 'Error while saving data $e');
     }
   }
 
@@ -44,13 +42,11 @@ class StorageService {
         base64String = await secureStorage.read(key: storageKey);
       }
 
-      LoggerService.log(
-          tag: 'StorageService', message: 'data loaded $base64String');
+      LoggerService.log(tag: 'StorageService', message: 'data loaded $base64String');
 
       return tryDecode(base64String);
     } catch (e) {
-      LoggerService.log(
-          tag: 'StorageService', message: 'Error while loading data $e');
+      LoggerService.log(tag: 'StorageService', message: 'Error while loading data $e');
       return null;
     }
   }
@@ -63,8 +59,7 @@ class StorageService {
         await secureStorage.delete(key: storageKey);
       }
     } catch (e) {
-      LoggerService.log(
-          tag: 'StorageService', message: 'Error while deleting data $e');
+      LoggerService.log(tag: 'StorageService', message: 'Error while deleting data $e');
     }
   }
 }

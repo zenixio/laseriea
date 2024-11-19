@@ -23,7 +23,6 @@ class BottomBar extends StatelessWidget {
             ),
           ),
           child: BottomNavigationBar(
-            
             backgroundColor: Colors.transparent,
             currentIndex: state.selectedIndex,
             onTap: (index) {

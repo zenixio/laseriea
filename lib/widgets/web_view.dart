@@ -29,8 +29,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    LoggerService.log(
-        tag: 'WebViewScreen', message: 'WebViewScreen url: ${widget.url}');
+    LoggerService.log(tag: 'WebViewScreen', message: 'WebViewScreen url: ${widget.url}');
     final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>{
       const Factory(EagerGestureRecognizer.new),
     };

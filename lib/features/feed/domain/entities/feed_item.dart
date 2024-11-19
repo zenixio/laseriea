@@ -31,8 +31,7 @@ class FeedItem {
     try {
       final title = item.findElements('title').single.innerText;
       final description = item.findElements('description').single.innerText;
-      final imageUrl =
-          item.findElements('media:thumbnail').single.getAttribute('url') ?? '';
+      final imageUrl = item.findElements('media:thumbnail').single.getAttribute('url') ?? '';
       final linkUrl = item.findElements('link').single.innerText;
 
       return FeedItem(

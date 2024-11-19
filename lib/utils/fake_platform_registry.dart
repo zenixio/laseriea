@@ -9,6 +9,3 @@ class FakePlatformViewRegistry {
 }
 
 final platformViewRegistry = FakePlatformViewRegistry();
-
-
-

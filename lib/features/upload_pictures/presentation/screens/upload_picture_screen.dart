@@ -46,8 +46,7 @@ class UploadPictureScreen extends StatelessWidget {
                   if (kIsWeb) {
                     context.read<UploadPictureCubit>().pickFile(
                       onSizeError: () {
-                        showErrorDialog(context,
-                            message: AppLocale.of(context)?.fileTooLarge);
+                        showErrorDialog(context, message: AppLocale.of(context)?.fileTooLarge);
                       },
                       onError: () {
                         showErrorDialog(context);
@@ -67,8 +66,7 @@ class UploadPictureScreen extends StatelessWidget {
                   showModalBottomSheet(
                     context: context,
                     shape: const RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(16)),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
                     ),
                     builder: (_) => BlocProvider.value(
                       value: cubit,
@@ -79,20 +77,15 @@ class UploadPictureScreen extends StatelessWidget {
                           children: [
                             ListTile(
                               leading: Icon(Icons.camera, color: Dcolors.cyan),
-                              title: Text(
-                                  AppLocale.of(context)?.imagePickerCamera ??
-                                      ""),
+                              title: Text(AppLocale.of(context)?.imagePickerCamera ?? ""),
                               onTap: () {
                                 Navigator.of(context).pop();
-                                context
-                                    .read<UploadPictureCubit>()
-                                    .captureImageWithCamera(
+                                context.read<UploadPictureCubit>().captureImageWithCamera(
                                   onError: () {
                                     showErrorDialog(context);
                                   },
                                   onLoadingEntry: () {
-                                    OverlayLoaderManager.instance
-                                        .showLoader(context);
+                                    OverlayLoaderManager.instance.showLoader(context);
                                   },
                                   onLoadingExit: () {
                                     OverlayLoaderManager.instance.hideLoader();
@@ -103,9 +96,7 @@ class UploadPictureScreen extends StatelessWidget {
                             ListTile(
                               iconColor: Dcolors.blue,
                               leading: Icon(Icons.photo, color: Dcolors.teal),
-                              title: Text(
-                                  AppLocale.of(context)?.imagePickerGallery ??
-                                      ""),
+                              title: Text(AppLocale.of(context)?.imagePickerGallery ?? ""),
                               onTap: () {
                                 Navigator.of(context).pop();
                                 _pickFromGallery(context);
@@ -122,8 +113,7 @@ class UploadPictureScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24.0),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 ),
                 child: Text(
                   AppLocale.of(context)?.addPicture ?? '',

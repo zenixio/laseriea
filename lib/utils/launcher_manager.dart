@@ -16,9 +16,7 @@ class LauncherManager extends ILauncherManager {
     try {
       return await url_launcher.launchUrl(
         uri,
-        mode: kIsWeb
-            ? LaunchMode.platformDefault
-            : LaunchMode.externalApplication,
+        mode: kIsWeb ? LaunchMode.platformDefault : LaunchMode.externalApplication,
       );
     } catch (_) {
       LoggerService.log(tag: 'LauncherManager', message: 'launchUrl Error: $_');

@@ -13,8 +13,7 @@ import 'package:laseriea/utils/secure_storage.dart';
 class UploadPictureCubit extends Cubit<UploadPictureState> {
   UploadPictureCubit() : super(const UploadPictureState());
 
-  final _picker =
-      getIt.isRegistered<ImagePicker>() ? getIt.get<ImagePicker>() : null;
+  final _picker = getIt.isRegistered<ImagePicker>() ? getIt.get<ImagePicker>() : null;
 
   Future<void> loadFromStorage() async {
     if (getIt.isRegistered<StorageService>()) {
@@ -63,8 +62,7 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
             // MAX 20 MB
             LoggerService.log(
               tag: 'UploadPictureCubit',
-              message:
-                  '_pickFile: file size is bigger than 20 mb => ${file.size}',
+              message: '_pickFile: file size is bigger than 20 mb => ${file.size}',
             );
             onSizeError();
           } else {
@@ -110,8 +108,7 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
     required VoidCallback onLoadingExit,
     required VoidCallback onSizeError,
   }) async {
-    LoggerService.log(
-        tag: 'UploadPictureState', message: 'pickImageFromGallery called');
+    LoggerService.log(tag: 'UploadPictureState', message: 'pickImageFromGallery called');
 
     try {
       onLoadingEntry();
@@ -121,9 +118,7 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
               pickedFile.path.endsWith('.jpg') ||
               pickedFile.path.endsWith('.png') ||
               pickedFile.path.endsWith('.bmp'))) {
-        LoggerService.log(
-            tag: 'UploadPictureState',
-            message: 'pickImageFromGallery  File picked: ${pickedFile.path}');
+        LoggerService.log(tag: 'UploadPictureState', message: 'pickImageFromGallery  File picked: ${pickedFile.path}');
 
         final bytes = await pickedFile.readAsBytes();
 
@@ -141,9 +136,7 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
           );
         }
       } else {
-        LoggerService.log(
-            tag: 'UploadPictureState',
-            message: 'pickImageFromGallery No valid file picked');
+        LoggerService.log(tag: 'UploadPictureState', message: 'pickImageFromGallery No valid file picked');
 
         throw Exception('No valid file picked');
       }
@@ -156,8 +149,7 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
         onError();
       }
 
-      LoggerService.log(
-          tag: 'UploadPictureState', message: 'pickImageFromGallery error: $e');
+      LoggerService.log(tag: 'UploadPictureState', message: 'pickImageFromGallery error: $e');
     }
 
     return Future.value();
@@ -168,16 +160,13 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
     required VoidCallback onLoadingEntry,
     required VoidCallback onLoadingExit,
   }) async {
-    LoggerService.log(
-        tag: 'UploadPictureState', message: 'captureImageWithCamera called');
+    LoggerService.log(tag: 'UploadPictureState', message: 'captureImageWithCamera called');
     try {
       onLoadingEntry();
       final pickedFile = await _picker?.pickImage(source: ImageSource.camera);
       if (pickedFile != null) {
         LoggerService.log(
-            tag: 'UploadPictureState',
-            message:
-                'captureImageWithCamera: Image captured: ${pickedFile.path}');
+            tag: 'UploadPictureState', message: 'captureImageWithCamera: Image captured: ${pickedFile.path}');
 
         final bytes = await pickedFile.readAsBytes();
         const twentyMB = 20 * 1024 * 1024;
@@ -189,18 +178,14 @@ class UploadPictureCubit extends Cubit<UploadPictureState> {
           emit(state.copyWith(imageBytes: bytes));
         }
       } else {
-        LoggerService.log(
-            tag: 'UploadPictureState',
-            message: 'captureImageWithCamera: No image captured');
+        LoggerService.log(tag: 'UploadPictureState', message: 'captureImageWithCamera: No image captured');
         throw Exception('No image captured');
       }
     } catch (e) {
       onLoadingExit();
       onError();
 
-      LoggerService.log(
-          tag: 'UploadPictureState',
-          message: 'captureImageWithCamera: error: $e');
+      LoggerService.log(tag: 'UploadPictureState', message: 'captureImageWithCamera: error: $e');
     }
 
     return Future.value();

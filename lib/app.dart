@@ -33,8 +33,7 @@ class LaSerieA extends StatelessWidget {
         supportedLocales: const [
           Locale('it', ''),
         ],
-        onGenerateTitle: (BuildContext context) =>
-            AppLocale.of(context)?.appTitle ?? '',
+        onGenerateTitle: (BuildContext context) => AppLocale.of(context)?.appTitle ?? '',
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
         onGenerateRoute: (RouteSettings routeSettings) {

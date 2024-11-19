@@ -18,9 +18,7 @@ class HomePageRepositoryImpl extends HomePageRepository {
         throw 'Dio not registered';
       }
     } catch (e) {
-      LoggerService.log(
-          tag: 'HomePageRepositoryImpl',
-          message: 'Error while fetching data $e');
+      LoggerService.log(tag: 'HomePageRepositoryImpl', message: 'Error while fetching data $e');
       return null;
     }
   }

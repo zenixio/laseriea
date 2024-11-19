@@ -17,8 +17,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with AutomaticKeepAliveClientMixin {
+class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -42,20 +41,17 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                 )
               : ListView.separated(
-                  separatorBuilder: (context, index) =>
-                      Divider(color: Colors.grey.shade400),
+                  separatorBuilder: (context, index) => Divider(color: Colors.grey.shade400),
                   restorationId: feedListRestorationId,
                   itemCount: items.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     final item = items[index];
                     final description = item.description;
-                    final truncatedDescription = description.length > 50
-                        ? "${description.substring(0, 50)}..."
-                        : description;
+                    final truncatedDescription =
+                        description.length > 50 ? "${description.substring(0, 50)}..." : description;
 
-                    LoggerService.log(
-                        tag: 'data', message: '$description ${item.title}');
+                    LoggerService.log(tag: 'data', message: '$description ${item.title}');
 
                     return ListTile(
                       onTap: () {
@@ -74,22 +70,18 @@ class _HomeScreenState extends State<HomeScreen>
                         }
                       },
                       isThreeLine: true,
-                      titleTextStyle: const TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                      subtitleTextStyle: const TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.grey),
+                      titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                      subtitleTextStyle: const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(item.imageUrl),
                       ),
                       title: Text(
                         item.title,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black),
+                        style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                       subtitle: Text(
                         truncatedDescription,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.grey),
+                        style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
                       ),
                     );
                   },

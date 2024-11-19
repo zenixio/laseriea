@@ -31,8 +31,7 @@ class IgLauncher {
         await _launchUrl();
       }
     } catch (_) {
-      LoggerService.log(
-          tag: 'IgLauncher', message: 'launch : cannot launch url');
+      LoggerService.log(tag: 'IgLauncher', message: 'launch : cannot launch url');
 
       onFailure();
     }

@@ -27,8 +27,7 @@ class PageBuilder extends StatelessWidget {
             ),
             child: Text(
               toTitleCamelCase(context),
-              style: TextStyle(
-                  color: Dcolors.lightBlue, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Dcolors.lightBlue, fontWeight: FontWeight.bold),
             ),
           ),
           backgroundColor: Colors.white,
@@ -49,8 +48,7 @@ class PageBuilder extends StatelessWidget {
               case ConnectionState.active:
               case ConnectionState.done:
                 return PageView(
-                  controller: BlocProvider.of<NavigationBarCubit>(context)
-                      .pageController,
+                  controller: BlocProvider.of<NavigationBarCubit>(context).pageController,
                   physics: const NeverScrollableScrollPhysics(),
                   children: const [
                     HomeScreen(),
