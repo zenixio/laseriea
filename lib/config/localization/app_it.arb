@@ -1,0 +1,53 @@
+{
+  "@@locale": "it",
+  "appTitle": "laseriea",
+  "@appTitle": {
+    "description": "Il titolo dell'applicazione"
+  },
+  "close": "Chiudi",
+  "@close": {},
+  "error": "Errore",
+  "@error": {},
+  "genericErrorMessage": "Qualcosa è andato storto, si prega di riprovare",
+  "@genericErrorMessage": {
+    "description": "Un messaggio di errore generico"
+  },
+  "retry": "Riprova",
+  "@retry": {},
+  "home": "Home",
+  "@home": {},
+  "share": "Condividi",
+  "@share": {},
+  "upload": "Carica",
+  "@upload": {},
+  "igOpenButtonDesc": "Cliccando il pulsante sottostante,\nsarai reindirizzato alla pagina Instagram\nufficiale della ",
+  "@igOpenButtonDesc": {
+    "description": "Un testo che descrive cosa fa il pulsante sottostante"
+  },
+  "pageName": "Serie A",
+  "@pageName": {},
+  "openIg": "Apri Instagram",
+  "@openIg": {},
+  "addPictureDesc": "Cliccando il pulsante sottostante,\npotrai caricare una foto, che rimarrà\nsalvata e visionabile ad ogni\napertura dell'app",
+  "@addPictureDesc": {
+    "description": "Un testo che descrive cosa fa il pulsante sottostante"
+  },
+  "addPicture": "Aggiungi una foto",
+  "@addPicture": {},
+  "imagePickerCamera": "Scatta una foto",
+  "@imagePickerCamera": {
+    "description": "Testo per selezionare l'opzione fotocamera"
+  },
+  "imagePickerGallery": "Carica dalla galleria",
+  "@imagePickerGallery": {
+    "description": "Testo per selezionare l'opzione galleria"
+  },
+  "fileTooLarge": "File maggiore di 20 MB",
+  "@fileTooLarge": {
+    "description": "Messaggio di errore per un file che supera i 20 MB"
+  },
+  "noData": "Nessun data",
+  "@noData": {
+    "description": "Messaggio che indica l'assenza di dati"
+  }
+}
