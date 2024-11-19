@@ -54,7 +54,6 @@ Flutter è stato scelto come framework per la sua versatilità, performance, e p
 ## 🛠️ **Librerie Utilizzate**
 | Libreria                        | Versione  |   Descrizione                       |
 |---------------------------------|-----------|-------------------------------------|
-| **`appcheck`**                  | ^1.5.2    | Per controllare app native.         |
 | **`dio`**                       | ^5.7.0    | HTTP client per feed RSS.           |
 | **`equatable`**                 | ^2.0.5    | Confronti eleganti di oggetti.      |
 | **`file_picker`**               | ^8.1.4    | Selezione immagini da file.         |
