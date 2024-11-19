@@ -16,7 +16,7 @@ final getIt = GetIt.I;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   final launcherManager = LauncherManager();
   final igLauncher = IgLauncher(launcherManager: launcherManager);
